@@ -1,38 +1,41 @@
-﻿// ConsoleApplication3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
-
-
-template<typename A, typename B> class Druid {
-public:
-    A health;
-    B power;
-    B get(int) {
-        return power;
-    }
-    A get1(int){
-        return health;
-    }
-
-int calculatel()
-{
-    A sum = 10;
-        health = sum;
-    return health;
-}
-};
+﻿#include <iostream>
+#include <vector>
+#include <ctime>
 using namespace std;
+
 
 int main()
 {
-    Druid<int, int> One;
-    Druid<int, int> Two;
- 
-    One.health;
-     Two.power = 30;
-     One.calculatel( );
-    std::cout << One.get1(4) << endl;
-    std::cout << Two.get(5) << endl;
-    return 0;
+    vector<int> Inspector;
+    srand(time(NULL));
+    
+    for (int i = 0; i < 15; i++){
+        Inspector.push_back(rand()%100);
+    };
+   
+
+    cout << "Size:" << Inspector.size() << endl;
+    
+    for (int i = 0; i < 15; i++){
+        cout << endl <<  Inspector[i] << endl;
+    };
+    
+    cout << "-------------------------------------" << endl ;
+    cout << "Resize on X number:" << endl;
+    int n;
+    cin >> n;
+    /////////////
+    Inspector.resize(n);
+
+    cout << "Size:" << Inspector.size() << endl;
+    
+    for (int i = 15; i < 15+n; i++) {
+        Inspector.insert(15, n, rand() % 100);
+    };
+
+    for (int i = 0; i < 15+n; i++) {
+        cout << endl << Inspector[i] << endl;
+    };
+    cout << endl << Inspector.size() << endl;
+        return 0;
 }

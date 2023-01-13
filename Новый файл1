@@ -1,0 +1,25 @@
+// ConsoleApplication3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include <iostream>
+
+template<typename A, typename B> class Druid {
+public:
+    A health;
+    B power;
+    B get(int) {
+        return power;
+    }
+    A get1(int){
+        return health;
+    }
+
+
+};
+using namespace std;
+
+int main()
+{
+
+    return 0;
+}
